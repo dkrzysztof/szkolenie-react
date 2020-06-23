@@ -1,0 +1,40 @@
+.predictionLeftColumn {
+    background-color: #4181FF;
+}
+
+.predictionRightColumn {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.previousPaintinDatePicked {
+    width: 300px;
+}
+
+.makePredictionButton {
+    background-color: #4181FF;
+    color: white;
+    width: 200px;
+}
+
+.inputRow {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.predictionBlock {
+    height: 150px;
+}
+
+.checkIcon {
+    color: white;
+    font-size: 100px;
+}
+
+.hidePredictionPanel {
+    display: none;
+}
+
+.ant-row.ant-form-item{
+    width:100%;
+}
