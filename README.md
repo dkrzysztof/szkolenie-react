@@ -7,7 +7,19 @@ Instrukcja jest w plikach Markdown `README.md`. Możne je podejrzeć za pomocą 
 
 ## Edytor tekstowy
 
-### <div style="height:3em">`Visual Studio Code`![vscode](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/256px-Visual_Studio_Code_1.35_icon.svg.png "")</div>
+### ```Visual Studio Code```<span style="height:1em">![vscode](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/256px-Visual_Studio_Code_1.35_icon.svg.png "")</span>
+
+Polecam używać Visual Studio Code, ale pewnie juz większość ma go zainstalowanego :D ( [link do pobrania](https://code.visualstudio.com/) ).
+
+Co do rozszerzeń to polecam:
+
+* **Auto Rename Tag** - Automatyczne poprawienie obu tagów html tylko w jednym miejscu,
+* **Debugger for Chrome** - debugger, który w przyszłości pozwoli na debugowanie aplikacji react,
+* **Material Icon Theme** - zmienia wygląd ikonek folderów i plików na ikony z związane z ich rozszerzeniami,
+* **Simple React Snippets** - snipetki do reacta,
+* **Typescript React code snippets** - snipetki do typescript reacta,
+
+
 
 ## Plany Szkoleń
 
