@@ -4,7 +4,7 @@
 Instrukcje będą przygotowywane do każdego szkolenia i będą zawierały ich streszczenia.
 
 Instrukcja jest w plikach Markdown `README.md`. Można je podejrzeć za pomocą github-a na stronie [repozystorium](https://github.com/dkrzysztof/szkolenie-react) lub za pomocą `Visual Studio Code`. 
-W drugim przypadku otwieramy plik `README.md` do edycji i w prawym górnym rogu klikamy na ikonke "_Open preview to the side_" (dwa prostokąty i lupka) lub za pomocą `Ctrl + K, V` ( **NIE**: Ctrl + K, Ctrl + V. Zaraz po K klikamy V).
+W drugim przypadku otwieramy plik `README.md` (lub `README.old.md` po wywołaniu `npx create-react-app ...`) do edycji i w prawym górnym rogu klikamy na ikonke "_Open preview to the side_" (dwa prostokąty i lupka) lub za pomocą `Ctrl + K, V` ( **NIE**: Ctrl + K, Ctrl + V. Zaraz po K klikamy V).
 
 
 ## Edytor tekstowy
@@ -29,7 +29,6 @@ Co do rozszerzeń to polecam:
 1. Środowisko:
     * `Create-React-App` - aplikacja na komputerze,
     * Alternatywa: `Codepen` - emulator w przeglądarce,
-    * Alternatywa: `React` oddzielnie jako `cdn` w html (nie polecane: inna składnia jsx),
 4. `JavaScript` - Wprowadzenie,
 5. `React` - wprowadzenie, wytłumaczenie `JSX`,
 6. Ćwiczenie,
