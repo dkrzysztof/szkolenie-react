@@ -1,10 +1,10 @@
 # Szkolenie React 
 
 ### `Część 1 - Środowisko`
-1. CRA (Create-React-App) - wymagania: nodejs + npm
-2. Alternatywa: Codepen
-3. Alternatywa: React oddzielnie jako cdn w html (tylko wspomnienie)
-4. JavaScript - Wprowadzenie
-5. JSX - wprowadzenie 
-6. Ćwiczenie
-
+1. Środowisko:
+    * `Create-React-App` - aplikacja na komputerze,
+    * Alternatywa: `Codepen` - emulator w przeglądarce,
+    * Alternatywa: `React` oddzielnie jako `cdn` w html (nie polecane: inna składnia jsx),
+4. `JavaScript` - Wprowadzenie,
+5. `React` - wprowadzenie, wytłumaczenie `JSX`,
+6. Ćwiczenie,
