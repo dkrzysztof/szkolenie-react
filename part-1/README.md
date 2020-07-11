@@ -1,68 +1,61 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Część pierwsza - uruchomienie środowiska za pomocą `create-react-app`, wprowadzenie do `JavaScript`.
 
-## Available Scripts
+## 1. Plan szkolenia
+1. Środowisko:
+    * `Create-React-App` - aplikacja na komputerze,
+    * Alternatywa: `Codepen` - emulator w przeglądarce,
+    * Alternatywa: `React` oddzielnie jako `cdn` w html (nie polecane: inna składnia jsx),
+4. `JavaScript` - Wprowadzenie,
+5. `React` - wprowadzenie, wytłumaczenie `JSX`,
+6. Ćwiczenie,
 
-In the project directory, you can run:
+## 2. Środowisko
 
-### `yarn start`
+### 2.1. `create-react-app`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### **WYMAGANIA**</br>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* Node.js 12.0.0^
+* npm 6.0.0^
 
-### `yarn test`
+Do uruchomienia aplikacji frontendowych na swoim komputerze wymagane jest zainstalowanie [`nodejs (link)`](https://nodejs.org/en/). Wybrać wersje rekomendowaną. Choć do tworzenia frontendu nie potrzebujemy środowiska nodejs, to będziemy potrzebować menedżera pakietów `npm`, który instaluje się wraz nim. Podczas instalacji **NALEŻY** zaznaczyć instalacje npm. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Przykładowy widok instalacyjny: <div style="width:fit-content;margin:auto">![widok instalacyjny](https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2015/01/installer.png "widok")</div>
 
-### `yarn build`
+#### Sprawdzenie obecności środowisk na komputerze
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+npm:
+```
+npm -v
+> 6.14.5
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+node.js
+```
+node -v
+> v14.2.0
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### **Stworzenie prostej aplikacji reactwej** 
 
-### `yarn eject`
+W folderze z naszymi przyszłymi projektami reactowymi otworzyć konsole (może być cmd, ważne aby npm był w zmiennych środowiskowych) i wywołać komende.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+npx create-react-app nazwa-aplikacji
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Stworzy to folder z zainstalowanymi paczkami (w tym biblioteką react) i prostą aplikacją reactową.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+cd nazwa-aplikacji
+npm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+#### `npm start`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Uruchamia aplikacje webową w przeglądarce<br />
+Dostępna pod domyślnym adresem [http://localhost:3000](http://localhost:3000).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Strona automatycznie się odświeży na wprowadzone zmiany.<br />
+Wszytkie błędy.
