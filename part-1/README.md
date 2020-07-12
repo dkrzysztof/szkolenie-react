@@ -317,11 +317,11 @@ Przykładami wyrażeń, które mogą być przekonwertowane na false są:
 * pusty łańcuch znaków (string) – `""` lub `''`; 
 * `undefined`.
 
-### **<span style="color:#f7503e">Ważne uwagi</span>**
+### !!! **Ważne uwagi** !!!
 
-#### Tablice i obiekty przekazywane są przez referencje. Liczby i znaki przez wartość.
+- **Tablice i obiekty** przekazywane są przez referencje. Liczby i znaki przez wartość.
 
-#### `Const` przypisany do tablicy lub obiektu nie pozwoli zmienić tylko referencji do danego obiektu w pamięci. Pozwoli natomiast do zmiany jego parametrów/właściwości i dodawania lub usuwania ich.
+- **`Const` przypisany do tablicy lub obiektu** nie pozwoli zmienić tylko referencji do danego obiektu w pamięci. Pozwoli natomiast do zmiany jego parametrów/właściwości i dodawania lub usuwania ich.
 
 ## 2. Wprowadzenie do React
 
