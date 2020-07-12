@@ -80,6 +80,7 @@ const stala = 124
 
 #### Różnica między `var` i `let`
 
+`var` nie jest `scope`'owe, tzn. nie jest zmienna dostępną tylko w danym kontektową, a także poza nim.
 ```JavaScript
 function testVar() {
     for (var i = 0; i < 3; i++) {
@@ -94,10 +95,10 @@ function testVar() {
 // 2
 // JavaScript
 ```
-
+`let` jest zmienna kontekstową, nie może zostać odczytana poza pętlą `for`. 
 ```JavaScript
 function testVar() {
-    for (var i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
         let course = 'JavaScript';
         console.log(i);
     }
@@ -109,11 +110,122 @@ function testVar() {
 // 2
 // Uncaught ReferenceError: course is not defined
 ```
+`const` działa w ten sam sposób co `let`.
+
+
+Dobrą praktyką jest używać tylko i wyłącznie `const` i `let`.
+### Łączenie stringów 
+
+```JavaScript
+let wiek = 10
+
+str = 'alicja ma ' + wiek + ' lat' 
+console.log(str)
+
+str = "alicja ma "
+console.log(str.concat(wiek).concat(" lat"))
+
+str = `alicja ma ${wiek} lat`
+console.log(str)
+```
+
+### Deklaracja Funkcji
+
+W JS funkcje można przypisać do zmiennych. Mogą być też one przekazywane jako `callback` w parametrze funkcji. 
+
+```JavaScript
+// funkcja anonimowa
+const foo1 = function(str){
+    console.log(str)
+}
+```
+Deklaracja powyżej tworzy nam osobny kontekst ( `this` ). Opcjonalnie możemy przypisać jej inny, wywołując na niej metode `bind(nowyKontekst)` Natomiast ta poniżej pobiera kontekst z poziomu wyżej. 
+```JavaScript
+// wyrażenie strzałkowe
+const foo2 = (str) => {
+    console.log(str)
+}
+```
+Kiedy byśmy napisali komponent funkcyjny, a w nim zawarlibyśmy deklaracje funkcji w postaci strzałkowej, to  w jej ciele moglibyśmy odwołać się do zmiennych zadeklarowanych poza tą funkcją
+
+Przykład
+
+W ES5 wymagane było słowo `bind`, aby powiązać kontekst funkcji z kontekstem obiektu. W tamtej wersji JS nie było wyrażeń strzałkowych. Bez bindowania, `console.log` zwróciłby `undefined`.
+
+```JavaScript
+var obj = {
+  id: 42,
+  counter: function counter() {
+    setTimeout(function() {
+      console.log(this.id);
+    }.bind(this), 1000);
+  }
+};
+```
+Ta sama funkcja zapisana z pomocą wyrażeń strzałkowych.
+```JavaScript
+var obj = {
+  id: 42,
+  counter: function counter(){
+    setTimeout(() =>{
+      console.log(this.id);
+    }, 1000);
+  }
+};
+```
+
+Więcej na temat funkcji i kiedy należy wykorzystywać wyrażenia strzałkowe => [freeCodeCamp](https://www.freecodecamp.org/news/when-and-why-you-should-use-es6-arrow-functions-and-when-you-shouldnt-3d851d7f0b26/)
+
 ### Deklaracja tablic
 
 ```JavaScript
 let a = [1,2,3]
+
+// operacje na tablicach
+
+a.push(4)
+// [1,2,3,4]
+
+a.pop()
+// [1,2,3]
 ```
+
+JavaScript dostarcza szereg metod możliwych do wykonania na tablicach. Jako parametr podaje się callback(czyli funkcja jako parametr lub jak `C#` wyrażenie lambda). Najczęściej korzysta się z poniższych.
+
+```JavaScript
+
+// forEach
+// Array.prototype.forEach( (element, index, array) => {} )
+a.forEach((element, index, array) => { console.log(array[index])} )
+a.forEach((element, index) => console.log(element))
+a.forEach( element => console.log(element))
+for (let i = 0; i < a.length; i++) {
+    console.log(a[i]);
+}
+
+// map
+// zwraca nową tablice!
+// Array.prototype.map( (element, index, array) => {} )
+let newArray = a.map(val => val*2)
+newArray = a.map(val => {return val*2})
+console.log(newArray)
+
+// slice
+// zwraca nową tablice!
+// Array.prototype.slice( startWithIndex, endBeforeIndex)
+newArray = a.slice(1,2) // [2]
+newArray = a.slice(1,3) // [2,3]
+newArray = a.slice(-1)  // [3]  przedostatni
+newArray = a.slice(-2)  // [2, 3]  przedostatni
+
+// filter
+// zwraca nową tablice!
+// Array.prototype.filter( (element, index, array) => {} )
+newArray = a.filter(element => element % 2 === 0)
+
+```
+
+Dokumentacja tablic => [Mozilla developer](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array)
 
 ### Deklaracja obiektów
 
@@ -133,34 +245,8 @@ let a = {
 console.log(a["param1"])
 console.log(a.param2)
 ```
-### Łączenie stringów 
 
-```JavaScript
-let wiek = 10
 
-str = 'alicja ma ' + wiek
-console.log(str)
-
-str = "alicja ma "
-console.log(str.concat(wiek))
-
-str = `alicja ma ${wiek}`
-console.log(str)
-```
-
-### Deklaracja Funkcji
-
-```JavaScript
-// funkcja anonimowa
-const foo1 = function(str){
-    console.log(str)
-}
-
-// wyrażenie strzałkowe
-const foo2 = (str) => {
-    console.log(str)
-}
-```
 ### Deklaracja tablic
 
 ```JavaScript
