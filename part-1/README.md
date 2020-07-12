@@ -301,7 +301,7 @@ Operatory logiczne
 Wartość domyślna
 ```JavaScript
 let nullVariable = null;
-let cannotBeNull = nullVariable || "default value if left is null"
+let cannotBeNull = nullVariable || "default value if left is false"
 ```
 Wartośc nie null, ale bez domyślnych
 ```JavaScript
@@ -317,7 +317,11 @@ Przykładami wyrażeń, które mogą być przekonwertowane na false są:
 * pusty łańcuch znaków (string) – `""` lub `''`; 
 * `undefined`.
 
+### **<span style="color:#f7503e">Ważne uwagi</span>**
 
+#### Tablice i obiekty przekazywane są przez referencje. Liczby i znaki przez wartość.
+
+#### `Const` przypisany do tablicy lub obiektu nie pozwoli zmienić tylko referencji do danego obiektu w pamięci. Pozwoli natomiast do zmiany jego parametrów/właściwości i dodawania lub usuwania ich.
 
 ## 2. Wprowadzenie do React
 
