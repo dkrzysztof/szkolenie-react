@@ -32,3 +32,26 @@ Co do rozszerzeń to polecam:
 4. `JavaScript` - Wprowadzenie,
 5. `React` - wprowadzenie, wytłumaczenie `JSX`,
 6. Ćwiczenie,
+
+### `Część 2 - React wprowadzenie`
+
+	• Komponenty klasowe
+	• State komponentu
+	• Różnica pomiędzy 
+Funkcyjnymi, a klasowymi komponentami,
+	• LifecycleMethods w komponentach klasowych,
+	• Podstawowe Hooki,
+	• Wykorzystanie Ant.Design
+	• Ćwiczenie
+
+
+### `Część 3 - Środowisko`
+
+
+### `Część 4- Środowisko`
+
+
+### `Część 5 - Środowisko`
+
+
+### `Część 6 - Środowisko`
