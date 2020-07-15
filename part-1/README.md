@@ -149,6 +149,9 @@ console.log(str)
 str = "alicja ma "
 console.log(str.concat(wiek).concat(" lat"))
 
+
+// tutaj ważne jest użycie "backsticków" czyli ``
+// w powyższych wystarczyło dać apostrofy albo cudzysłów 
 str = `alicja ma ${wiek} lat`
 console.log(str)
 ```
@@ -326,5 +329,58 @@ Przykładami wyrażeń, które mogą być przekonwertowane na false są:
 ## 2. Wprowadzenie do React
 
 
+### 2.0. Prerekwizyty _(ukochane)_
+
+- sklonować repozytorium do siebie na komputer,
+- przejsc punkt 0.1,
+
+lub
+- przejsc punkt 0.2,
+
+### 2.1 Strukturka 
+
+![](https://i.ibb.co/7n7FDFm/Adnotacja-2020-07-13-134855.png)
+
+Z folderu możemy usunąć następujace pliki:
+- App.test.js,
+- logo.svg,
+- serviceWorker.js
+- setupTests.js
+
+Są to pliki uruchamiajace testy, grafiki i konfiguracyjne react-a (nie będą nam na razie potrzebne, wręcz mogą nam utrudnic zrozumienie reacta :P ).
+
+### 2.2 JSX
+
+- Pozwala przypisać znaczniki HTML do zmiennych 
+```jsx
+let element = <div>hello</div>
+```
+
+- Umieszczać wartości zmiennych z JS w HTML, za pomocą nawiasów klamrowych `{}`
+```jsx
+let name = 'alicja';
+
+let Component = <h1>hello {name}</h1>;
+```
+
+- Komponent funkcyjny - każda funkcja, w ktorej pliku importowana jest biblioteka react, 
+```jsx
+const FunctionalComponent = () => {
+  return <h1>Hello</h1>
+}
+```
+
+- Komponentom funkcyjnym możemy zawsze przekazać parametry przy pomocy parametru `props`.
+```jsx
+const FunctionalComponent = (props) => {
+  return <h1>Hello {props.name}</h1>
+}
+```
+```jsx
+ReactDOM.render(
+  <FunctionalComponent name={"Krzysztof"} />,
+  document.getElementById("root")
+)
+```
 
 ## 3. Ćwiczenie
