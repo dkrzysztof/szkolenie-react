@@ -32,3 +32,49 @@ Co do rozszerzeń to polecam:
 4. `JavaScript` - Wprowadzenie,
 5. `React` - wprowadzenie, wytłumaczenie `JSX`,
 6. Ćwiczenie,
+
+### `Część 2 - React wprowadzenie`
+
+1. Komponenty klasowe
+2. `State` komponentu
+3. Różnica pomiędzy Funkcyjnymi, a klasowymi komponentami,
+4. `LifecycleMethods` w komponentach klasowych,
+5. Podstawowe Hooki,
+6. Wykorzystanie **Ant.Design**
+7. Ćwiczenie
+
+
+### `Część 3 - Wstęp do TypeScript`
+1. Statyczne typy dostępne w TS,
+2. Rekonfiguracja CRA na TS,
+3. Budowanie komponentu w TS,
+    - Interfejs, a typ,
+    - Deklaracja propsów i state'a,
+4. Przerobienie zadania z Part II na ts
+
+
+### `Część 4- Wstęp do Redux(Redux toolkit)`
+1. Przekazywanie danych bez state managementu,
+2. Struktura Reduxa(actions, reducers, store)
+3. Zasada działania,
+4. Pokazanie na reduxie starym,
+5. Przedstawienie redux toolkit,
+6. Rozwiniecie Aplikacji z PART III i redux toolkit,
+7. Asynchroniczne akcje z redux (Redux Thunk)
+	
+
+### `Część 5 - wykonywanie żądań HTTP`
+1. Biblioteka axios,
+2. Promise'y - z czym to się je?
+3. Jsonplaceholder.com w aplikacji z PART IV
+4. Przedstawienie struktury agenta 
+    - Pierwsze wprowadzenie do templatki,
+5. Integracja reduxa z axiosem, wyoknywanie asynchroniczych akcji na reduxie
+6. Rozwiniecie aplikacji z PART IV o axiosa
+
+
+### `Część 6 - Wprowadzenie do struktury templatki`
+1. Komponenty i widoki,
+2. Redux i Slice'y
+3. Axios i Agent
+4. Konwencje

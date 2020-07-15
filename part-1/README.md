@@ -71,16 +71,18 @@ W prosty sposób możemy korzystać z reacta z pomocą strony [`Codepen`](https:
 ```JavaScript
 var let const
 
-var zmienna = 5
+var zmienna1 = 5
 
-let zmienna = "str"
+let zmienna2 = "str"
 
 const stala = 124
 ```
 
 #### Różnica między `var` i `let`
 
-`var` nie jest `scope`'owe, tzn. nie jest zmienna dostępną tylko w danym kontektową, a także poza nim.
+`var` nie jest `scope`'owe, tzn. nie jest zmienna dostępną tylko w danym kontekście. Można natomiast odwołać się do niej poza nim.
+
+_Przykład_
 ```JavaScript
 function testVar() {
     for (var i = 0; i < 3; i++) {
@@ -96,6 +98,8 @@ function testVar() {
 // JavaScript
 ```
 `let` jest zmienna kontekstową, nie może zostać odczytana poza pętlą `for`. 
+
+_Przykład_
 ```JavaScript
 function testVar() {
     for (let i = 0; i < 3; i++) {
@@ -114,7 +118,27 @@ function testVar() {
 
 
 Dobrą praktyką jest używać tylko i wyłącznie `const` i `let`.
-### Łączenie stringów 
+### String 
+
+Zmiana case'a liter.
+```JavaScript
+let str = "StRiNg"
+
+console.log(str.toLowerCase()) // małe znaki
+console.log(str.toUpperCase()) // duże znaki
+```
+Przydatne funkcje
+```JavaScript
+let str = "a bb ccc dddd"
+str.split(" ") // tworzy tablice dzieląc string po znaku " "
+
+str = "   wiele spacji mam       "
+str.trim()  // usuwa spacje z poczatku i konca stringa
+
+```
+
+
+Łączenie tekstów.
 
 ```JavaScript
 let wiek = 10
@@ -148,7 +172,7 @@ const foo2 = (str) => {
 ```
 Kiedy byśmy napisali komponent funkcyjny, a w nim zawarlibyśmy deklaracje funkcji w postaci strzałkowej, to  w jej ciele moglibyśmy odwołać się do zmiennych zadeklarowanych poza tą funkcją
 
-Przykład
+_Przykład_
 
 W ES5 wymagane było słowo `bind`, aby powiązać kontekst funkcji z kontekstem obiektu. W tamtej wersji JS nie było wyrażeń strzałkowych. Bez bindowania, `console.log` zwróciłby `undefined`.
 
@@ -173,6 +197,7 @@ var obj = {
   }
 };
 ```
+Wyrażenie strzałkowe pobiera context z poziomu jeden wyżej, czyli taka funkcja zadeklarowana w klasie pobrała by kontekst klasowy bo jest o poziom wyżej.
 
 Więcej na temat funkcji i kiedy należy wykorzystywać wyrażenia strzałkowe => [freeCodeCamp](https://www.freecodecamp.org/news/when-and-why-you-should-use-es6-arrow-functions-and-when-you-shouldnt-3d851d7f0b26/)
 
@@ -190,7 +215,7 @@ a.pop()
 // [1,2,3]
 ```
 
-JavaScript dostarcza szereg metod możliwych do wykonania na tablicach. Jako parametr podaje się callback(czyli funkcja jako parametr lub jak `C#` wyrażenie lambda). Najczęściej korzysta się z poniższych.
+JavaScript dostarcza szereg metod możliwych do wykonania na tablicach. Jako parametr podaje się najczęściej callback(czyli funkcje jako parametr lub jak `C#` wyrażenie lambda). Najczęściej korzysta się z poniższych.
 
 ```JavaScript
 
@@ -222,8 +247,9 @@ newArray = a.slice(-2)  // [2, 3]  przedostatni
 // zwraca nową tablice!
 // Array.prototype.filter( (element, index, array) => {} )
 newArray = a.filter(element => element % 2 === 0)
-
 ```
+
+Funkcja `map` będzie później często wykorzystywana w React, do budowania komponentów na podstawie tablicy danych.
 
 Dokumentacja tablic => [Mozilla developer](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array)
 
@@ -247,22 +273,58 @@ console.log(a.param2)
 ```
 
 
-### Deklaracja tablic
+### Numbers
 
+Możliwe inicjalizacje zmiennych danymi liczbowymi
 ```JavaScript
-```
-### Deklaracja tablic
-
-```JavaScript
-```
-
-```JavaScript
+let num = 1
+num = 1.2
+num = 12e3      // 12000
+num = 12e-3     // 0.012
 ```
 
+### Wyrażenia logiczne
+
 ```JavaScript
+if(isTrue){
+    // do something that is true
+}else{
+    // do something that is false
+}
+```
+Operator warunkowy
+```JavaScript
+isTrue : fooIfTrue() : fooIfFalse();
+```
+Operatory logiczne
+
+Wartość domyślna
+```JavaScript
+let nullVariable = null;
+let cannotBeNull = nullVariable || "default value if left is false"
+```
+Wartośc nie null, ale bez domyślnych
+```JavaScript
+let isNotNull = true;
+let somethingThatIsNotNull = isNotNull && "I will be assigned if left is true"
 ```
 
+Przykładami wyrażeń, które mogą być przekonwertowane na false są:
+
+* `null`;
+* `NaN`;
+* `0`;
+* pusty łańcuch znaków (string) – `""` lub `''`; 
+* `undefined`.
+
+### !!! **Ważne uwagi** !!!
+
+- **Tablice i obiekty** przekazywane są przez referencje. Liczby i znaki przez wartość.
+
+- **`Const` przypisany do tablicy lub obiektu** nie pozwoli zmienić tylko referencji do danego obiektu w pamięci. Pozwoli natomiast do zmiany jego parametrów/właściwości i dodawania lub usuwania ich.
 
 ## 2. Wprowadzenie do React
+
+
 
 ## 3. Ćwiczenie
