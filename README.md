@@ -25,7 +25,7 @@ Co do rozszerzeń to polecam:
 
 ## Plany Szkoleń
 
-### `Część 1 - Środowisko`
+### [`Część 1 - Środowisko`](https://github.com/dkrzysztof/szkolenie-react/tree/master/part-1)
 1. Środowisko:
     * `Create-React-App` - aplikacja na komputerze,
     * Alternatywa: `Codepen` - emulator w przeglądarce,
