@@ -294,10 +294,21 @@ if(isTrue){
 }else{
     // do something that is false
 }
+
+if(123 === 123) // true
+
+if(123 == "123") // true, pomija typ, próbuje konwertować na możliwie najblizy jednemu i drugiemu
+
+if(123 !== 0  ) // true jesli rózne wartości i typ
+
+if(123 != "0") // true jeśli różne wartości
+
+>=  >
+<=  <
 ```
 Operator warunkowy
 ```JavaScript
-isTrue : fooIfTrue() : fooIfFalse();
+isTrue ? fooIfTrue() : fooIfFalse();
 ```
 Operatory logiczne
 
