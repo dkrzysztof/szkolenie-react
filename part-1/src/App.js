@@ -25,12 +25,12 @@ function App(props) {
 				<header className="App-header">
 					Hello {props.name}
 					<button onClick={buttonOnClick}>Kliknij mnie</button>
-					{objects.map((x) => (
-						<div key={x.id}>
-							<h4>{x.name}</h4>
-							<p>Hobby: {x.hobby}</p>
-						</div>
-					))}
+{objects.map((x) => (
+  <div key={x.id}>
+    <h4>{x.name}</h4>
+    <p>Hobby: {x.hobby}</p>
+  </div>
+))}
 				</header>
 			</div>
 			<h1>tag</h1>
