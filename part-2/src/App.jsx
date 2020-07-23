@@ -1,27 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-import Timer from './Timer';
-
 function App() {
-	const [state, setstate] = useState(false);
-
-	useEffect(() => {
-		console.log('I was executed');
-		return () => {
-			console.log('I was unmounted');
-		};
-	}, []);
+	const handleClick = () => {};
 
 	return (
 		<div>
 			<div className="App">
 				<header className="App-header">
-					{state.toString()}
-					<button className="mb-3" onClick={() => {}}>
+					<button className="mb-3" onClick={handleClick}>
 						toggle component
 					</button>
-					{state ? <Timer /> : null}
+					{/* importowac klasowy komponent /*/}
 				</header>
 			</div>
 		</div>
