@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 import Timer from './Timer';
 
 function App(props) {
+	const [state, setstate] = useState(true);
+
 	const buttonOnClick = () => {
-		console.log('I was Clicked');
+		setstate((ps) => !ps);
 	};
 
 	return (
@@ -13,7 +15,8 @@ function App(props) {
 			<div className="App">
 				<header className="App-header">
 					Hello {props.name}
-					<Timer />
+					<button onClick={buttonOnClick}>ohh</button>
+					{state ? <Timer /> : null}
 				</header>
 			</div>
 		</div>
