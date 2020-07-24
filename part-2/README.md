@@ -92,7 +92,7 @@ componentDidMount(prevProps) {
 - odpowiednik hooka `useEffect` w FC,  
 
 ```JavaScript
-componentDidUpdate(prevProps) {
+componentDidUpdate(prevProps,prevState,snapshot) {
  // Standardowe wykorzystanie, porównanie czy wartość props się zmieniła
  if (this.props.userName !== prevProps.userName) {
    this.fetchData(this.props.userName);
@@ -120,19 +120,19 @@ static getDerivedStateFromProps(props, state) {
         selectedUser: newSelectedUser
       };
     }
-    // Zwróć null, aby zasygnalizować brak zmian. null => false
+    // Zwróć null, aby zasygnalizować brak zmian
     return null;
   }
 ```
 
-### 3.5. `shouldComponentUpdate()`
+### 3.5. `shouldComponentUpdate`
 ```JavaScript
 shouldComponentUpdate(nextProps, nextState) {
  return this.props.title !== nextProps.title || 
   this.state.input !== nextState.input }
 ```
 
-### 3.6. `getSnapshotBeforeUpdate()`
+### 3.6. `getSnapshotBeforeUpdate`
 - Wywoływana zaraz przed aktualizacja DOM-u. Wartość zwracana z `getSnapshotBeforeUpdate()` jest przekazywana do `componentDidUpdate()`.
 - Powinno się jej używać rzadko albo w ogóle,
 - dobrym przykładem jest zmiana rozmiaru okna podczas asynchronicznych akcji,
@@ -143,13 +143,55 @@ getSnapshotBeforeUpdate(prevProps, prevState) {
 }
 ```
 
-### 3.6. [DEPRECATED] nie używane metody. W react 16.4 lub 17 zostaną usunięte. Mają przedrostek `UNSAFE_`. Część z nich została zastąpiona `getSnapshotBeforeUpdate`
+### 3.7. [DEPRECATED] nie używane metody. W react 16.4 lub 17 zostaną usunięte. Mają przedrostek `UNSAFE_`. Część z nich została zastąpiona `getSnapshotBeforeUpdate`
 
 - `componentWillMount`
 - `componentWillReceiveProps`
 - `componentWillUpdate`
 
-## 4. 
-Za pomocą hook'ów w react(o nich w punkcie 5.) można odwzorować state oraz podstawowe
+## 4. Podstawowe Hooki w React
+Za pomocą hook'ów w react można odwzorować state oraz podstawowe metody cyklu życia komponentu.
+
+Dwa z nich najczęściej używane:
+- useEffect - odzwierciedlenie `componentDidMount`, `componentDidUpdate` oraz `componentWillUnmount`,
+- useState - odzwierciedlenie state'u
+
+```JavaScript
+	useEffect(() => {
+		// wykonaj te funkcje gdy zmieni się wartośc zmiennej w tablicy
+		return () => {
+			// na odmontowanie komponentu wykonaj te funkcje
+		}
+	}, [obserwujTeZmienne, i, teWSumieTeż])
+```
+
+```JavaScript
+const [variable, setVariable] = useState(0)
+```
+
+## 5. Różnice między CC a FC
+
+Podstawowa różnica polega na składni. W komponentach funkcyjnych jest przejrzysta i zawierająca mniej kodu. Wygnodniej się ją testuje i szybciej implementuje.
+
+Sami twórcy Reacta polecają używanie funkcjonalnych komponentów zamiast klasowych. Natomiast w sytuacjach, gdy zajdzie potrzeba użycia takich LCM jak `getSnapshotBeforeUpdate`, `getDerivedStateFromProps`, `shouldComponentUpdate` to wówczas musimy skorzystać z klasowych komponentów.
+
+## 6. Czas na Ant Design
+
+link do strony [ant.design](https://ant.design)
+
+```
+npm install antd
+// lub
+npm i antd
+```
+
+w `index.js` należy zaimportować jednorazowo plik css
+
+```JavaScript
+import 'antd/dist/antd.css';
+```
+
+## 7. Ćwiczenie
+
 
 

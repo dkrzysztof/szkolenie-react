@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
 		<div>
 			<div className="App">
 				<header className="App-header">
-					<button className="mb-3" onClick={handleClick}>
+					<button className="mb-3" onClick={handleClick} ghost>
 						toggle component
 					</button>
 					{/* importowac klasowy komponent /*/}
