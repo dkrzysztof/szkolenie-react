@@ -13,7 +13,7 @@ number
 string
 boolean
 object
-array
+type[] //odpowiednik tablicy
 any
 ```
 
@@ -97,7 +97,6 @@ class Clock extends Component<{}, AppState> {
 
 // useState
 const [state,setState] = useState<AppState>({})
-
 ```
 
 ## 3. Rekonfiguracja CRA na TS,
