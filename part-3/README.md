@@ -13,7 +13,7 @@ number
 string
 boolean
 object
-type[] //odpowiednik tablicy
+string[] //odpowiednik tablicy
 any
 ```
 
