@@ -4,17 +4,18 @@ import Parent2 from './containers/Parent2';
 import { NodeStyle } from './styles/styles';
 
 const Node: React.FC<{}> = () => {
-	const [text, setText] = useState<string>('');
-	const handleButtonClick = (value: string) => {
-		setText(value);
-	};
+	// TODO: utworzyć handler dla przycisku, ktory zostanie przekazany do Parent1.
+	// Jego parametrem będzie string, z wartością Input-a
+
+	// TODO: wykorzystać useState który będzie zarządzał zmienną string.
+	// Jego wartośc musi zostać przekazana do Parent2, a ustawiona w handlerze.s
 
 	return (
 		<>
 			<em>Node</em>
 			<div style={NodeStyle}>
-				<Parent1 onClick={handleButtonClick} />
-				<Parent2 nameForChild={text} />
+				<Parent1 onClick={() => {}} />
+				<Parent2 nameForChild={'Przykładowy tekst'} />
 			</div>
 		</>
 	);
