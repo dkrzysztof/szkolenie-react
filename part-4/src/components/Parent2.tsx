@@ -1,11 +1,12 @@
 import React from 'react';
-import { Parent1Style } from '../styles/styles';
+import { Parent2Style } from '../styles/styles';
 import { Input, Button } from 'antd';
-interface Parent1Props {
+
+interface Parent2Props {
 	onClick: (value: string) => void;
 }
 
-const Parent1: React.FC<Parent1Props> = () => {
+const Parent2: React.FC<Parent2Props> = () => {
 	let text: string = '';
 
 	// TODO: zmienna text powinna przetrzymywać wartość z komponentu Input.
@@ -15,8 +16,8 @@ const Parent1: React.FC<Parent1Props> = () => {
 
 	return (
 		<div>
-			<em>Parent1</em>
-			<div style={Parent1Style}>
+			<em>Parent2</em>
+			<div style={Parent2Style}>
 				<Input placeholder="Wpisz tekst" onChange={() => {}} />
 				<Button type="primary" onClick={() => {}}>
 					Prześlij do komponentu obok
@@ -26,4 +27,4 @@ const Parent1: React.FC<Parent1Props> = () => {
 	);
 };
 
-export default Parent1;
+export default Parent2;

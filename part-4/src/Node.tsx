@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Parent1 from './components/Parent1';
-import Parent2 from './containers/Parent2';
+import Parent2 from './components/Parent2';
+import Parent1 from './containers/Parent1';
 import { NodeStyle } from './styles/styles';
 
 const Node: React.FC<{}> = () => {
@@ -14,8 +14,8 @@ const Node: React.FC<{}> = () => {
 		<>
 			<em>Node</em>
 			<div style={NodeStyle}>
-				<Parent1 onClick={() => {}} />
-				<Parent2 nameForChild={'Przykładowy tekst'} />
+				<Parent1 nameForChild={'Przykładowy tekst'} />
+				<Parent2 onClick={() => {}} />
 			</div>
 		</>
 	);

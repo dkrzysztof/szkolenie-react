@@ -11,12 +11,12 @@ export const NodeStyle: React.CSSProperties = {
 	alignItems: 'center'
 };
 
-export const Parent1Style: React.CSSProperties = {
+export const Parent2Style: React.CSSProperties = {
 	border: '3px solid blue',
 	padding: '0.5em 1em'
 };
 
-export const Parent2Style: React.CSSProperties = {
+export const Parent1Style: React.CSSProperties = {
 	border: '3px solid red',
 	padding: '0.5em 1em'
 };

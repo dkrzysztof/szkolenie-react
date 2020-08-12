@@ -1,20 +1,20 @@
 import React from 'react';
 import Child from './Child';
-import { Parent2Style } from '../styles/styles';
+import { Parent1Style } from '../styles/styles';
 
 interface Parent2Props {
 	nameForChild: string;
 }
 
-const Parent2: React.FC<Parent2Props> = ({ nameForChild }) => {
+const Parent1: React.FC<Parent2Props> = ({ nameForChild }) => {
 	return (
 		<div>
-			<em>Parent2</em>
-			<div style={Parent2Style}>
+			<em>Parent1</em>
+			<div style={Parent1Style}>
 				<Child nameForChild2={nameForChild} />
 			</div>
 		</div>
 	);
 };
 
-export default Parent2;
+export default Parent1;
