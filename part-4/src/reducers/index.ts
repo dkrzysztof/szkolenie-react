@@ -1,8 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import { counterSlice } from './counterSlice';
 
-export const rootReducer = combineReducers({
-	counter: counterSlice.reducer
-});
+// TODO implement combine reducers
 
 export type RootState = ReturnType<typeof rootReducer>;

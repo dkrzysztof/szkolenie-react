@@ -1,35 +1,25 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export interface ListElement {
-	key: number;
-	text: string;
-}
+// TODO implement listSlice
 
-interface ListState {
-	data: ListElement[];
-	key: number;
-}
+// Slice powininen zawierać dwa reducery
+//  addItem - dodaje do tablicy list nowy obiekt
+//  removeItem - usuwa z tablicy konkretny obiekt
 
-const initialState: ListState = {
-	data: [],
-	key: 0
-};
-
-export const listSlice = createSlice({
-	initialState,
-	name: 'counter',
-	reducers: {
-		addItem: (state: ListState, action: PayloadAction<string>) => {
-			state.data.push({ text: action.payload, key: state.key });
-			state.key += state.key;
-		},
-		removeItem: (state: ListState, action: PayloadAction<number>) => {
-			console.log(action.payload);
-			state.data = state.data.filter(
-				(value) => value.key !== action.payload
-			);
-		}
-	}
-});
-
-export const { addItem, removeItem } = listSlice.actions;
+// zmiana state
+// przykładowy reducer zmieniajcy dane uzytkownika oraz je usuwajacy
+// reducers: {
+// 	...
+//	// "state" zawsze jest jednego typu. Nasz odnośnik do aktulanych danych
+// 	setUsername: (state: UserState, action: PayloadAction<string>) => {
+// 		state.username = action.payload
+// 	}
+//
+// 	...
+//
+//	// parametr "action" jest opcjonalny, gdy nie potrzebujemy zadnych danych z komponentu,
+//	// a tylko zasygnalizować wykonanie jakiejs czynności
+// 	removeUsername: (state: UserState) => {
+// 		state.username = null;
+// 	}
+// }

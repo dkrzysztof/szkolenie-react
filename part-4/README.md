@@ -3,10 +3,9 @@
 1. Przekazywanie danych bez state managementu,
 2. Struktura Reduxa(actions, reducers, store)
 3. Zasada działania,
-4. Pokazanie na reduxie starym,
-5. Przedstawienie redux toolkit,
-6. Rozwiniecie Aplikacji z PART III i redux toolkit,
-7. Asynchroniczne akcje z redux (Redux Thunk)
+4. Przedstawienie redux toolkit,
+5. Rozwiniecie Aplikacji z PART III i redux toolkit,
+6. Asynchroniczne akcje z redux (Redux Thunk)
 
 ## 1. Przekazywanie danych bez state managementu,
 
@@ -139,8 +138,7 @@ export const INCREMENT = "INCREMENT"
 
 function increment() {
   return {
-    type: INCREMENT,
-    text
+    type: INCREMENT
   }
 }
 
@@ -149,8 +147,7 @@ export const DECREMENT = "DECREMENT"
 
 function decrement() {
   return {
-    type: DECREMENT,
-    text
+    type: DECREMENT
   }
 }
 ```
@@ -195,13 +192,13 @@ function counter(state = 0, action) {
 
 ## 3. Zasada działania,
 
-1. Wysłana zostaje funkcja za pomocą `dispatch` z obiektem akcji jako argument,
-2. `Store` reduxa wywoływuje każdego reducera przekazanego w funkcji `createStore()`,
-3. Pasująca akcja w reducerze zmanipuleje w zadany jej sposób state store'a,
+1. Wysłany zostaje obiekt akcji do `store'a` za pomocą `dispatch`.
+2. `Store` reduxa wywoływuje każdego reducera przekazanego w funkcji `createStore()`.
+3. Pasująca akcja w reducerze zmanipuleje w zadany jej sposób `state store'a`.
 4. Store reduxa zostanie nadpisany zmianami zwróconymi z reducera.
+5. Wszystkie pobrane dane ze stora w komponentach zostają zaaktualizowane.
 
-## 4. Pokazanie na reduxie starym,
-## 5. Przedstawienie redux toolkit,
+## 4. Przedstawienie redux toolkit,
 
 `Redux toolkit` to nadbudówka `redux`. Jego stworzenie wynikło jako poprawa takich wad jak:
 - implementacja store'a redux'owego jest zbyt skomplikowana,
@@ -214,21 +211,21 @@ function counter(state = 0, action) {
 
 ```JavaScript
 function createSlice({
-    // A name, used in action types
+    /*A name, used in action types*/
     name: string,
-    // The initial state for the reducer
+    /* The initial state for the reducer */
     initialState: any,
-    // An object of "case reducers". Key names will be used to generate actions.
+    /* An object of "case reducers". Key names will be used to generate actions.*/
     reducers: Object<string, ReducerFunction | ReducerAndPrepareObject>
-    // An additional object of "case reducers", where the keys should be other
-    // action types, or a "builder callback" function used to add more reducers
+    /* An additional object of "case reducers", where the keys should be other */
+    /* action types, or a "builder callback" function used to add more reducers */
     extraReducers?:
     | Object<string, ReducerFunction>
     | ((builder: ActionReducerMapBuilder<State>) => void)
 })
 ```
 
-## 6. Rozwiniecie Aplikacji z PART III i redux toolkit,
+## 5. Rozwiniecie Aplikacji z PART III i redux toolkit,
 
 Zadanie
 1. Skopiować folder ./src z part-3 do ./part-4/src
@@ -257,7 +254,7 @@ export type RootState = ReturnType<typeof rootReducer>;
 
 6. Wykorzystać hooki `useSelector` i `useDispatch`.
 
-## 7. Asynchroniczne akcje z redux (Redux Thunk)
+## 6. Asynchroniczne akcje z redux (Redux Thunk)
 
 Redux Thunk jest to biblioteka obsługująca asynchronicznność w `redux`. Ze wzgledu na to że redux jest tylko synchroniczny, `redux thunk` wprowadza nam tę możliwość uporządkowując akcje asynchroniczne(`Promise` i `async await`) w akcje synchroniczne.
 

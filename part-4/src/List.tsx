@@ -10,9 +10,11 @@ interface ListElement {
 let key = 0;
 
 const List: React.FC<{}> = () => {
+	// TODO: wykorzystanie useSelector do pobrania listy
 	const [list, setList] = useState<ListElement[]>([]);
 
 	const handleSubmit = (values: Store) => {
+		// TODO: wykorzystanie useDispatch do przesłania akcji
 		setList((ps) => {
 			return [...ps, { key: key, text: values.text }];
 		});
