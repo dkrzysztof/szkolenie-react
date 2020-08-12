@@ -203,6 +203,95 @@ function counter(state = 0, action) {
 ## 4. Pokazanie na reduxie starym,
 ## 5. Przedstawienie redux toolkit,
 
+`Redux toolkit` to nadbudówka `redux`. Jego stworzenie wynikło jako poprawa takich wad jak:
+- implementacja store'a redux'owego jest zbyt skomplikowana,
+- Aby redux zaczął dawać jakieś korzyści trzeba najpierw dodać wiele paczek,
+- Typowy redux generuje zbyt dużo boilerplate'a,
+
+`Redux-toolkit` zmienia nieco koncepcje redux'a. Wprowadzone został szereg funkcji ułatwiających ich implementacje.
+ - `createSlice()` - funkcja tworząca slice'y. Jest dosyć wykorzystywana w naszej templatce. Generuje akcje i reducery. W prosty i czytelny sposób możemy tworzyć kolejne reducery,
+- `configureStore()` - nadbudówka `createStore()`. Domyślnie zawiera `redux-thunk`, automatycznie agreguje nasze reducery,
+
+```JavaScript
+function createSlice({
+    // A name, used in action types
+    name: string,
+    // The initial state for the reducer
+    initialState: any,
+    // An object of "case reducers". Key names will be used to generate actions.
+    reducers: Object<string, ReducerFunction | ReducerAndPrepareObject>
+    // An additional object of "case reducers", where the keys should be other
+    // action types, or a "builder callback" function used to add more reducers
+    extraReducers?:
+    | Object<string, ReducerFunction>
+    | ((builder: ActionReducerMapBuilder<State>) => void)
+})
+```
 
 ## 6. Rozwiniecie Aplikacji z PART III i redux toolkit,
+
+Zadanie
+1. Skopiować folder ./src z part-3 do ./part-4/src
+2. Doinstalowac paczki
+```
+npm i typescript @types/jest @types/node @types/react @types/react-dom
+```
+3. Utworzyć foldery `./src/store` i `./src/reducers`, a w nim odpowiadnio pliki `store.ts` oraz counterSlice.ts i `index.ts` w `./src/reducers`
+
+4. W store.ts dodać linijki:
+```JavaScript
+import { configureStore } from '@reduxjs/toolkit';
+
+import { rootReducer } from '../reducers';
+
+const store = configureStore({ reducer: rootReducer });
+export default store;
+```
+
+Na końcu pliku `./src/reducers/index.ts` dodać następująca linijke:
+```JavaScript
+export type RootState = ReturnType<typeof rootReducer>;
+```
+
+5. Zaimplementować `counterSlice.ts` i `index.ts`, 
+
+6. Wykorzystać hooki `useSelector` i `useDispatch`.
+
 ## 7. Asynchroniczne akcje z redux (Redux Thunk)
+
+Redux Thunk jest to biblioteka obsługująca asynchronicznność w `redux`. Ze wzgledu na to że redux jest tylko synchroniczny, `redux thunk` wprowadza nam tę możliwość uporządkowując akcje asynchroniczne(`Promise` i `async await`) w akcje synchroniczne.
+
+Kreator akcji asynchronicznej:
+```JavaScript
+export const getQuestion = (): AppThunk => async (dispatch) => {
+    // rozpoczęcie akcji w store redux'a
+    dispatch(getQuestionStart());
+    
+    // rozpoczecie wysyłania żądania do API
+    agent.Questions.getQuestion(questionId)
+        // na sukces wyślij akcję o poprawnym zakonczeniu żądania,
+        .then((response) => dispatch(getQuestionSuccess(response)))
+        // na porażke wyślij akcję o negatywnym zakonczeniu żądania,
+		.catch((error) => dispatch(getQuestionFailure(error)));
+};
+```
+
+Wówczas w naszym komponencie możemy wywołać jedną funkcje `getQuestion` i wysłać ją za pomocą `dispatch`'a do store'a, a resztą zajmie się nasz redux.
+
+```JavaScript
+const App: React.FC<{}> = () => {
+    
+    // pobieranie disptacha
+    const dispatch = useDispatch<any>();
+
+    // pobieranie wartości ze store'a redux'a
+	const question = useSelector((state: RootState) => state.questions.question);
+
+    // wykonywanie zapytań do API tylko w useEffect !!!
+    useEffect(()=> {
+        dispatch(getQuestion)
+    },[dispatch])
+    
+    return <div></div>
+}
+```
