@@ -6,11 +6,14 @@ interface Parent2Props {
 	onClick: (value: string) => void;
 }
 
-const Parent2: React.FC<Parent2Props> = () => {
+const Parent2: React.FC<Parent2Props> = (props) => {
 	let text: string = '';
 
 	// TODO: zmienna text powinna przetrzymywać wartość z komponentu Input.
 	// Napisać handler dla niego.
+	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		text = event.target.value;
+	};
 
 	// TODO: przekazać props onClick z komponentu rodzica do komponentu Button.
 
@@ -18,8 +21,8 @@ const Parent2: React.FC<Parent2Props> = () => {
 		<div>
 			<em>Parent2</em>
 			<div style={Parent2Style}>
-				<Input placeholder="Wpisz tekst" onChange={() => {}} />
-				<Button type="primary" onClick={() => {}}>
+				<Input placeholder="Wpisz tekst" onChange={handleChange} />
+				<Button type="primary" onClick={() => props.onClick(text)}>
 					Prześlij do komponentu obok
 				</Button>
 			</div>
